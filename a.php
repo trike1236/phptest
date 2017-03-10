@@ -23,7 +23,7 @@ try {
   	
   	// select
   	for($i=1;$i<count($arr_id);$i++){
-	  	$stmt = $db->prepare('select type,text,answer_txt,answer_num from quiz_table where id ='.$arr_id[$i]);
+	  	$stmt = $db->prepare('select type,quiz_id,text,answer_txt,answer_num from quiz_table where quiz_id ='.$arr_id[$i]);
 	  	$stmt->execute();
 	  	$users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	  	foreach ($users as $quizVal) {
